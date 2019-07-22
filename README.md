@@ -1,6 +1,13 @@
-# Kotlin Experiments
+# Experiments
 
-Just experimenting with Kotlin and some libraries, such as JOOQ.
+A testbed for experimenting with various technologies I'm interested in.
+
+## Vagrant
+
+Vagrant is eventually going to be used for testing everyting else.
+
+## Ansible
+Ansible will be used to set everything up.
 
 ## JOOQ
 The database we are using for tests is called dvdrental and can be found 
