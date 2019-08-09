@@ -1,0 +1,7 @@
+- name: capture output of whoami command
+  hosts: cloud
+  tasks:
+    - command: whoami
+      register: login
+    - debug:
+        var: login.stdout

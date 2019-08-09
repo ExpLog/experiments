@@ -1,0 +1,5 @@
+[py3:children]
+cloud
+
+[py3:vars]
+ansible_python_interpreter=/usr/bin/python3
