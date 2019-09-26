@@ -7,11 +7,16 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
-  config.vm.box = "fedora/29-cloud-base"
+  config.vm.box = "centos/7"
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.memory = 256
     libvirt.cpus = 1
+  end
+
+  config.vm.provider :hyperv do |hyperv|
+    hyperv.memory = 256
+    hyperv.cpus = 1
   end
   
   config.vm.define "cloud1" do |cloud1|
