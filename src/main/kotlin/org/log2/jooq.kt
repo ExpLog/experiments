@@ -29,3 +29,7 @@ fun main(args: Array<String>) {
         e.printStackTrace()
     }
 }
+
+fun `this is a function with spaces`(){
+    println("asdf")
+}

@@ -60,6 +60,32 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
         </dependency>
+
+        <!-- Parsing -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.10.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -118,6 +144,13 @@
                               -->
                             <inputSchema>public</inputSchema>
                         </database>
+
+                        <generate>
+                            <interfaces>true</interfaces>
+                            <daos>true</daos>
+                            <relations>true</relations>
+                        </generate>
+
                         <target>
                             <packageName>org.log2.jooq.model</packageName>
                             <directory>target/generated-sources/jooq</directory>
