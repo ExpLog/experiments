@@ -1,5 +1,6 @@
 package org.log2
 
+import kotlinx.coroutines.*
 import org.jooq.Result
 import org.jooq.SQLDialect
 import org.jooq.impl.DSL
@@ -28,8 +29,27 @@ fun main(args: Array<String>) {
     } catch (e: Exception) {
         e.printStackTrace()
     }
+
+
+    print(usingCoroutinesAsync())
 }
 
-fun `this is a function with spaces`(){
+fun `this is a function with spaces`() {
     println("asdf")
+}
+
+suspend fun suspendExample(): Int = withContext(Dispatchers.Default) {
+    for (i in 1..10000) {
+        println(i)
+        if (i == 500) {
+            return@withContext i
+        }
+    }
+
+    -1
+}
+
+fun usingCoroutinesAsync() = GlobalScope.async {
+    val a = async { suspendExample() }
+    return@async a
 }
