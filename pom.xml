@@ -138,7 +138,7 @@
                     <!-- JDBC connection parameters -->
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://127.0.01:5432/dvdrental</url>
+                        <url>jdbc:postgresql://127.0.0.1:5432/dvdrental</url>
                         <user>postgres</user>
                         <password>postgres</password>
                     </jdbc>
@@ -159,6 +159,7 @@
                             <interfaces>true</interfaces>
                             <daos>true</daos>
                             <relations>true</relations>
+                            <navigationMethods>true</navigationMethods>
                         </generate>
 
                         <target>
