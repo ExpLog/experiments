@@ -22,6 +22,14 @@ class Logger(val name: String) {
         printLogEvent(event)
     }
 
+    fun info(message: String, vararg attributes: Pair<String, Any>) {
+        val event = LogEvent(message, "INFO", name)
+        for (entry in attributes) {
+            event[entry.first] = entry.second
+        }
+        printLogEvent(event)
+    }
+
     // TODO: exception and stacktrace
 
     private fun printLogEvent(event: LogEvent) {
@@ -59,5 +67,11 @@ fun main() {
         it["data"] = DummyData(1, 2)
     }
 
+    // the pairs are essentially creating a DSL, by using an infix operator 'to'
+    logger.info("json payload", "this time" to "using", "pair" to "because", "they are" to "fun")
+
+    val map = mapOf(1 to 2, 2 to 3)
+
     // this is looking pretty good!
+    // I need to try wrapping sl4j and actually writing logs to see what I can do
 }
